@@ -1,0 +1,18 @@
+version: "3"
+services:
+  # back:
+  #   build: ./back
+  #   tty: true
+  #   volumes:
+  #     - ./back:/go/src
+  #   ports:
+  #     - "8080:3000"
+  #   command: sh -c "go mod tidy && air"
+  front:
+    build: ./front
+    tty: true
+    volumes:
+      - ./front:/usr/src/app
+    ports:
+      - "8080:5173"
+    command: sh -c "cd sekigae && npm run dev"
